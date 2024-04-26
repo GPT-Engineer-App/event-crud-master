@@ -5,7 +5,7 @@ import { FaPlus, FaTrash, FaEdit } from "react-icons/fa";
 const API_URL = "https://mnwefvnykbgyhbdzpleh.supabase.co/rest/v1/notes";
 const API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1ud2Vmdm55a2JneWhiZHpwbGVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTMyNzQ3MzQsImV4cCI6MjAyODg1MDczNH0.tnHysd1LqayzpQ1L-PImcvlkUmkNvocpMS7tS-hYZNg";
 
-const Index = () => {
+const Index = ({ onLogout }) => {
   const [notes, setNotes] = useState([]);
   const [note, setNote] = useState("");
   const [editingId, setEditingId] = useState(null);
@@ -82,6 +82,9 @@ const Index = () => {
 
   return (
     <Container maxW="container.md" py={8}>
+      <Button colorScheme="red" onClick={() => onLogout(false)} mb={4}>
+        Log Out
+      </Button>
       <VStack spacing={4} align="stretch">
         <Heading mb={6}>Event Manager</Heading>
         <FormControl>

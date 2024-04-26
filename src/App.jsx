@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={isLoggedIn ? <Index /> : <Login onLogin={setIsLoggedIn} />} />
+        <Route exact path="/" element={isLoggedIn ? <Index onLogout={setIsLoggedIn} /> : <Login onLogin={setIsLoggedIn} />} />
       </Routes>
     </Router>
   );
